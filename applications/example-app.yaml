@@ -6,7 +6,7 @@ metadata:
 spec:
   project: customer
   source:
-    repoURL: https://gitlab.com/she-ag/tools/kind/customer.git
+    repoURL: https://github.com/mkoellges/customer.git
     targetRevision: HEAD
     path: k8s/overlay/staging
   destination:
@@ -26,7 +26,7 @@ metadata:
 spec:
   project: customer
   source:
-    repoURL: https://gitlab.com/she-ag/tools/kind/customer.git
+    repoURL: https://github.com/mkoellges/customer.git
     targetRevision: HEAD
     path: k8s/overlay/production
   destination:
