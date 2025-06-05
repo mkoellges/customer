@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: app-dev-cert
+spec:
+  secretName: app-dev-tls
+  issuerRef:
+    name: selfsigned-she-ca
+    kind: ClusterIssuer
+  commonName: dev.she-test.com
+  dnsNames:
+    - dev.she-test.com
+  duration: 8760h # 1 year
+  renewBefore: 360h # 15 days

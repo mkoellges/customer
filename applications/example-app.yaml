@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: staging
+  namespace: customer
+spec:
+  project: customer
+  source:
+    repoURL: https://gitlab.com/she-ag/tools/kind/customer.git
+    targetRevision: HEAD
+    path: k8s/overlay/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: customer
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: production
+  namespace: customer
+spec:
+  project: customer
+  source:
+    repoURL: https://gitlab.com/she-ag/tools/kind/customer.git
+    targetRevision: HEAD
+    path: k8s/overlay/production
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: customer
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
