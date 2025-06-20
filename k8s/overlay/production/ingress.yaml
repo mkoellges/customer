@@ -10,10 +10,10 @@ spec:
   ingressClassName: nginx-internal
   tls:
     - hosts:
-        - www.skoellgma.de
+        - www.koellgma.de
       secretName: app-tls
   rules:
-    - host: www.skoellgma.de
+    - host: www.koellgma.de
       http:
         paths:
           - path: /
