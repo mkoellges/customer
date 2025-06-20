@@ -5,15 +5,15 @@ metadata:
   name: my-nginx
   annotations:
     kubernetes.io/ingress.class: "nginx-internal"
-    cert-manager.io/cluster-issuer: "selfsigned-she-ca"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx-internal
   tls:
     - hosts:
-        - test.she-test.com
+        - test.koellgma.de
       secretName: app-tls
   rules:
-    - host: test.she-test.com
+    - host: test.koellgma.de
       http:
         paths:
           - path: /
