@@ -1,11 +1,11 @@
 resources:
   - ../../base
   - namespace.yaml
-  - ingress.yaml
+  - http-route.yaml
 
 configMapGenerator:
-- name: example-app
-  literals:
-    - STAGE="PRODUCTION"
+  - name: example-app
+    literals:
+      - STAGE="PRODUCTION"
 
 namespace: example-app-production
